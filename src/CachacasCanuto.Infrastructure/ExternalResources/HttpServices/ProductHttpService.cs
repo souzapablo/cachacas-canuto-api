@@ -1,5 +1,7 @@
 ﻿using CachacasCanuto.Infrastructure.ExternalResources.HttpServices.Interfaces;
+using CachacasCanuto.Infrastructure.ExternalResources.Options;
 using CachacasCanuto.Infrastructure.ExternalResources.ViewModels;
+using Microsoft.Extensions.Options;
 using Newtonsoft.Json;
 using System.Text.RegularExpressions;
 
@@ -8,16 +10,17 @@ namespace CachacasCanuto.Infrastructure.ExternalResources.HttpServices
     public class ProductHttpService : IProductHttpService
     {
         private readonly IClientHttpService _httpClientService;
-        private const string _url = "https://firebasestorage.googleapis.com/v0/b/testemonomytobackend/o/Catalogo.json?alt=media";
+        private readonly ExternalResourcesOptions _options;
 
-        public ProductHttpService(IClientHttpService httpClientService)
+        public ProductHttpService(IClientHttpService httpClientService, IOptions<ExternalResourcesOptions> options)
         {
             _httpClientService = httpClientService;
+            _options = options.Value;
         }
 
         public async Task<List<ExternalProductViewModel>?> GetAllProducts()
         {
-            var response = await _httpClientService.GetRequestAsync(_url);
+            var response = await _httpClientService.GetRequestAsync(_options.ExternalUrl + "Catalogo.json?alt=media");
 
             if (response is null)
                 return null;
