@@ -8,6 +8,7 @@ using Microsoft.OpenApi.Models;
 using System.Reflection;
 using AutoMapper;
 using CachacasCanuto.Application.AutoMapper;
+using CachacasCanuto.Infrastructure.ExternalResources.Options;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -25,14 +26,16 @@ builder.Services.AddScoped<IProductHttpService, ProductHttpService>();
 builder.Services.AddScoped<ICustomerHttpService, CustomerHttpService>();
 builder.Services.AddScoped<ISaleHttpService, SaleHttpService>();
 builder.Services.AddScoped<IClientHttpService, ClientHttpService>();
+builder.Services.Configure<ExternalResourcesOptions>(
+    builder.Configuration.GetSection(ExternalResourcesOptions.ExternalResources));
 builder.Services.AddSwaggerGen(c =>
 {
     c.SwaggerDoc("v1",
                     new OpenApiInfo
                     {
-                        Title = "Cachaças Canuto",
+                        Title = "Cachaï¿½as Canuto",
                         Version = "v1",
-                        Description = "API desenvolvida para gerenciamento de um negócio de chacaças",
+                        Description = "API desenvolvida para gerenciamento de um negï¿½cio de chacaï¿½as",
                         Contact = new OpenApiContact
                         {
                             Name = "Pablo Souza",
