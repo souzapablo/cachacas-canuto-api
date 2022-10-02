@@ -1,4 +1,5 @@
-﻿using CachacasCanuto.Infrastructure.ExternalResources.HttpServices.Interfaces;
+﻿using CachacasCanuto.Application.Common;
+using CachacasCanuto.Infrastructure.ExternalResources.HttpServices.Interfaces;
 using CachacasCanuto.Infrastructure.ExternalResources.Options;
 using CachacasCanuto.Infrastructure.ExternalResources.ViewModels;
 using Microsoft.Extensions.Options;
@@ -21,7 +22,7 @@ namespace CachacasCanuto.Infrastructure.ExternalResources.HttpServices
             var response = await _httpClientService.GetRequestAsync(_options.ExternalUrl + "Vendas.json?alt=media");
 
             if (response is null)
-                return null;
+                return ReadJsonExtension.ReadSalesJson();
 
             var sales = JsonConvert.DeserializeObject<List<ExternalSaleViewModel>>(response);
 

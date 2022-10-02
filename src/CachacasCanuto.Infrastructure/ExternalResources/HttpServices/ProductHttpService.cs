@@ -1,4 +1,5 @@
-﻿using CachacasCanuto.Infrastructure.ExternalResources.HttpServices.Interfaces;
+﻿using CachacasCanuto.Application.Common;
+using CachacasCanuto.Infrastructure.ExternalResources.HttpServices.Interfaces;
 using CachacasCanuto.Infrastructure.ExternalResources.Options;
 using CachacasCanuto.Infrastructure.ExternalResources.ViewModels;
 using Microsoft.Extensions.Options;
@@ -22,8 +23,7 @@ namespace CachacasCanuto.Infrastructure.ExternalResources.HttpServices
         {
             var response = await _httpClientService.GetRequestAsync(_options.ExternalUrl + "Catalogo.json?alt=media");
 
-            if (response is null)
-                return null;
+            response ??= ReadJsonExtension.ReadProductJson();
 
             response = Regex.Replace(response, "Classificaao", "Classificacao");
 
