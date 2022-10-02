@@ -54,7 +54,7 @@ REST, para gerenciar os dados e fornecer informações para o seu negócio, e el
 
 A coleção do Postman está disponível [clicando aqui](https://www.getpostman.com/collections/a6e5ce2a019f8e0b62bd).
 
-Para importar, basta fazer o download do arquivo e clicar em Import. Após anexada, a coleção irá aparecer normalmente à esquerda.
+Para importar, basta fazer o download do arquivo, clicar em Import e anexar o arquivo. Após anexada, a coleção irá aparecer normalmente à esquerda.
 
 Como a url das requisições é uma variável da coleção, dependendo será necessário atualizá-la. Para isso, clique na coleção, acesse a aba de variáveis e substitua o Current Value.
 
