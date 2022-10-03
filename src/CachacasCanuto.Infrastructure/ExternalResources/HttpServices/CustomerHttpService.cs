@@ -1,4 +1,4 @@
-﻿using CachacasCanuto.Application.Common;
+﻿using CachacasCanuto.Application.Common.Extensions;
 using CachacasCanuto.Infrastructure.ExternalResources.HttpServices.Interfaces;
 using CachacasCanuto.Infrastructure.ExternalResources.Options;
 using CachacasCanuto.Infrastructure.ExternalResources.ViewModels;
@@ -16,14 +16,13 @@ namespace CachacasCanuto.Infrastructure.ExternalResources.HttpServices
         public CustomerHttpService(IClientHttpService httpClientService, IOptions<ExternalResourcesOptions> options)
         {
             _httpClientService = httpClientService;
-            _options = options.Value;
         }
 
         public async Task<List<ExternalCustomerViewModel>?> GetAllCustomers()
         {
-            var response = await _httpClientService.GetRequestAsync(_options.ExternalUrl + "Clientes.json?alt=media");
+            var response = await _httpClientService.GetRequestAsync(_url);
 
-            response ??= ReadJsonExtension.ReadCustomersJson();
+            response ??= JsonReaderExtensions.ReadClientesJson();
 
             response = Regex.Replace(response, "(\\d{2});", "$1");
             response = Regex.Replace(response, "Nomee", "Nome");

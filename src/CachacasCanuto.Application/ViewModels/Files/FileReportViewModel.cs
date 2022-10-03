@@ -1,4 +1,4 @@
-﻿namespace CachacasCanuto.Core.Entities.Files
+﻿namespace CachacasCanuto.Application.ViewModels.Files
 {
     public class FileReportViewModel
     {

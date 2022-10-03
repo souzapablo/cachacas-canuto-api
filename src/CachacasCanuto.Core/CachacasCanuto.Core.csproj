@@ -6,4 +6,16 @@
     <Nullable>enable</Nullable>
   </PropertyGroup>
 
+  <ItemGroup>
+    <None Remove="Data\Catalogo.json" />
+    <None Remove="Data\Clientes.json" />
+    <None Remove="Data\Vendas.json" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <EmbeddedResource Include="Data\Catalogo.json" />
+    <EmbeddedResource Include="Data\Clientes.json" />
+    <EmbeddedResource Include="Data\Vendas.json" />
+  </ItemGroup>
+
 </Project>

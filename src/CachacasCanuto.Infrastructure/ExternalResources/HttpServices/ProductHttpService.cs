@@ -1,5 +1,4 @@
-﻿using CachacasCanuto.Application.Common;
-using CachacasCanuto.Infrastructure.ExternalResources.HttpServices.Interfaces;
+﻿using CachacasCanuto.Infrastructure.ExternalResources.HttpServices.Interfaces;
 using CachacasCanuto.Infrastructure.ExternalResources.Options;
 using CachacasCanuto.Infrastructure.ExternalResources.ViewModels;
 using Microsoft.Extensions.Options;
@@ -16,7 +15,6 @@ namespace CachacasCanuto.Infrastructure.ExternalResources.HttpServices
         public ProductHttpService(IClientHttpService httpClientService, IOptions<ExternalResourcesOptions> options)
         {
             _httpClientService = httpClientService;
-            _options = options.Value;
         }
 
         public async Task<List<ExternalProductViewModel>?> GetAllProducts()

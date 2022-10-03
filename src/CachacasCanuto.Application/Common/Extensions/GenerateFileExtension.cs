@@ -1,5 +1,5 @@
-﻿using CachacasCanuto.Application.ViewModels.Reports;
-using CachacasCanuto.Core.Entities.Files;
+﻿using CachacasCanuto.Application.ViewModels.Files;
+using CachacasCanuto.Application.ViewModels.Reports;
 using ClosedXML.Excel;
 
 namespace CachacasCanuto.Application.Common.Extensions
