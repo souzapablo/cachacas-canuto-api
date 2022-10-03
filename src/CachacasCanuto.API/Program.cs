@@ -33,9 +33,9 @@ builder.Services.AddSwaggerGen(c =>
     c.SwaggerDoc("v1",
                     new OpenApiInfo
                     {
-                        Title = "Cacha�as Canuto",
+                        Title = "Cachaças Canuto",
                         Version = "v1",
-                        Description = "API desenvolvida para gerenciamento de um neg�cio de chaca�as",
+                        Description = "API desenvolvida para gerenciamento de um negócio de cachaças",
                         Contact = new OpenApiContact
                         {
                             Name = "Pablo Souza",

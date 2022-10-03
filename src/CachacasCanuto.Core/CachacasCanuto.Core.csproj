@@ -1,4 +1,4 @@
-<Project Sdk="Microsoft.NET.Sdk">
+﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
     <TargetFramework>net6.0</TargetFramework>
@@ -7,15 +7,6 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <None Remove="Data\Catalogo.json" />
-    <None Remove="Data\Clientes.json" />
-    <None Remove="Data\Vendas.json" />
+    <None Include="Data\Catalogo.json" />
   </ItemGroup>
-
-  <ItemGroup>
-    <EmbeddedResource Include="Data\Catalogo.json" />
-    <EmbeddedResource Include="Data\Clientes.json" />
-    <EmbeddedResource Include="Data\Vendas.json" />
-  </ItemGroup>
-
 </Project>

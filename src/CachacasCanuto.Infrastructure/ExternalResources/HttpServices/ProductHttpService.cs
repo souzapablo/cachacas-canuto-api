@@ -15,6 +15,7 @@ namespace CachacasCanuto.Infrastructure.ExternalResources.HttpServices
         public ProductHttpService(IClientHttpService httpClientService, IOptions<ExternalResourcesOptions> options)
         {
             _httpClientService = httpClientService;
+            _options = options.Value;
         }
 
         public async Task<List<ExternalProductViewModel>?> GetAllProducts()
